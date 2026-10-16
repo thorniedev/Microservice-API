@@ -1,0 +1,37 @@
+info:
+  name: Register Business
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8091/api/businesses
+  body:
+    type: json
+    data: |-
+      {
+        "legalName": "Amazon Web Services Inc",
+        "displayName": "AWS Cloud Cambodia",
+        "email": "contact@aws.com.kh",
+        "phoneNumber": "+85512345678",
+        "products": [
+          {
+            "name": "Cloud Compute Node",
+            "price": 25.00,
+            "quantity": 100
+          },
+          {
+            "name": "Cloud Storage 1TB",
+            "price": 10.00,
+            "quantity": 500
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

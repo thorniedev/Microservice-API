@@ -1,0 +1,43 @@
+info:
+  name: Create Order
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8093/api/v1/orders
+  body:
+    type: json
+    data: |-
+      {
+        "customerId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
+        "businessId": "d290f1ee-6c54-4b01-90e6-d701748f0852",
+        "price": 60.00,
+        "items": [
+          {
+            "productId": "d290f1ee-6c54-4b01-90e6-d701748f0853",
+            "quantity": 2,
+            "price": 25.00,
+            "subTotal": 50.00
+          },
+          {
+            "productId": "d290f1ee-6c54-4b01-90e6-d701748f0854",
+            "quantity": 1,
+            "price": 10.00,
+            "subTotal": 10.00
+          }
+        ],
+        "address": {
+          "street": "Russian Federation Blvd (110)",
+          "postalCode": "12000",
+          "city": "Phnom Penh"
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

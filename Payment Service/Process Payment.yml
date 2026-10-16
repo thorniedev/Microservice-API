@@ -1,0 +1,24 @@
+info:
+  name: " Process Payment"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8094/api/payments
+  body:
+    type: json
+    data: |-
+      {
+        "orderId": "a68f6d16-bef0-4b9b-bf61-c223d8c2b644",
+        "customerId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
+        "price": 60.00
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
